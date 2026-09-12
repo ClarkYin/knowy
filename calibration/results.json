@@ -1,0 +1,336 @@
+{
+  "model": "Xenova/bge-small-en-v1.5",
+  "sweep": [
+    {
+      "threshold": 0.7,
+      "hits": 38,
+      "misses": 7,
+      "misroutes": 0,
+      "falseHits": 41,
+      "correctlyMissed": 4
+    },
+    {
+      "threshold": 0.71,
+      "hits": 37,
+      "misses": 8,
+      "misroutes": 0,
+      "falseHits": 38,
+      "correctlyMissed": 7
+    },
+    {
+      "threshold": 0.72,
+      "hits": 36,
+      "misses": 9,
+      "misroutes": 0,
+      "falseHits": 38,
+      "correctlyMissed": 7
+    },
+    {
+      "threshold": 0.73,
+      "hits": 36,
+      "misses": 9,
+      "misroutes": 0,
+      "falseHits": 33,
+      "correctlyMissed": 12
+    },
+    {
+      "threshold": 0.74,
+      "hits": 34,
+      "misses": 11,
+      "misroutes": 0,
+      "falseHits": 29,
+      "correctlyMissed": 16
+    },
+    {
+      "threshold": 0.75,
+      "hits": 34,
+      "misses": 11,
+      "misroutes": 0,
+      "falseHits": 27,
+      "correctlyMissed": 18
+    },
+    {
+      "threshold": 0.76,
+      "hits": 33,
+      "misses": 12,
+      "misroutes": 0,
+      "falseHits": 27,
+      "correctlyMissed": 18
+    },
+    {
+      "threshold": 0.77,
+      "hits": 33,
+      "misses": 12,
+      "misroutes": 0,
+      "falseHits": 27,
+      "correctlyMissed": 18
+    },
+    {
+      "threshold": 0.78,
+      "hits": 31,
+      "misses": 14,
+      "misroutes": 0,
+      "falseHits": 25,
+      "correctlyMissed": 20
+    },
+    {
+      "threshold": 0.79,
+      "hits": 25,
+      "misses": 20,
+      "misroutes": 0,
+      "falseHits": 21,
+      "correctlyMissed": 24
+    },
+    {
+      "threshold": 0.8,
+      "hits": 25,
+      "misses": 20,
+      "misroutes": 0,
+      "falseHits": 18,
+      "correctlyMissed": 27
+    },
+    {
+      "threshold": 0.81,
+      "hits": 24,
+      "misses": 21,
+      "misroutes": 0,
+      "falseHits": 16,
+      "correctlyMissed": 29
+    },
+    {
+      "threshold": 0.82,
+      "hits": 21,
+      "misses": 24,
+      "misroutes": 0,
+      "falseHits": 14,
+      "correctlyMissed": 31
+    },
+    {
+      "threshold": 0.83,
+      "hits": 20,
+      "misses": 25,
+      "misroutes": 0,
+      "falseHits": 11,
+      "correctlyMissed": 34
+    },
+    {
+      "threshold": 0.84,
+      "hits": 19,
+      "misses": 26,
+      "misroutes": 0,
+      "falseHits": 7,
+      "correctlyMissed": 38
+    },
+    {
+      "threshold": 0.85,
+      "hits": 17,
+      "misses": 28,
+      "misroutes": 0,
+      "falseHits": 7,
+      "correctlyMissed": 38
+    },
+    {
+      "threshold": 0.86,
+      "hits": 12,
+      "misses": 33,
+      "misroutes": 0,
+      "falseHits": 5,
+      "correctlyMissed": 40
+    },
+    {
+      "threshold": 0.87,
+      "hits": 8,
+      "misses": 37,
+      "misroutes": 0,
+      "falseHits": 4,
+      "correctlyMissed": 41
+    },
+    {
+      "threshold": 0.88,
+      "hits": 6,
+      "misses": 39,
+      "misroutes": 0,
+      "falseHits": 4,
+      "correctlyMissed": 41
+    },
+    {
+      "threshold": 0.89,
+      "hits": 5,
+      "misses": 40,
+      "misroutes": 0,
+      "falseHits": 4,
+      "correctlyMissed": 41
+    },
+    {
+      "threshold": 0.9,
+      "hits": 3,
+      "misses": 42,
+      "misroutes": 0,
+      "falseHits": 4,
+      "correctlyMissed": 41
+    },
+    {
+      "threshold": 0.91,
+      "hits": 2,
+      "misses": 43,
+      "misroutes": 0,
+      "falseHits": 1,
+      "correctlyMissed": 44
+    },
+    {
+      "threshold": 0.92,
+      "hits": 1,
+      "misses": 44,
+      "misroutes": 0,
+      "falseHits": 0,
+      "correctlyMissed": 45
+    },
+    {
+      "threshold": 0.93,
+      "hits": 1,
+      "misses": 44,
+      "misroutes": 0,
+      "falseHits": 0,
+      "correctlyMissed": 45
+    },
+    {
+      "threshold": 0.94,
+      "hits": 1,
+      "misses": 44,
+      "misroutes": 0,
+      "falseHits": 0,
+      "correctlyMissed": 45
+    },
+    {
+      "threshold": 0.95,
+      "hits": 0,
+      "misses": 45,
+      "misroutes": 0,
+      "falseHits": 0,
+      "correctlyMissed": 45
+    }
+  ],
+  "separability": [
+    {
+      "id": "refund-timing",
+      "minP": 0.8650063985637672,
+      "maxN": 0.9029982872951646,
+      "gap": -0.03799188873139747,
+      "separable": false
+    },
+    {
+      "id": "pto-accrual",
+      "minP": 0.6731760696168914,
+      "maxN": 0.7812092328712977,
+      "gap": -0.10803316325440637,
+      "separable": false
+    },
+    {
+      "id": "expense-limit",
+      "minP": 0.784020886677648,
+      "maxN": 0.8248637218640346,
+      "gap": -0.04084283518638654,
+      "separable": false
+    },
+    {
+      "id": "prod-deploy",
+      "minP": 0.657975204355756,
+      "maxN": 0.8591864929873281,
+      "gap": -0.20121128863157212,
+      "separable": false
+    },
+    {
+      "id": "oncall-escalation",
+      "minP": 0.7787742651052525,
+      "maxN": 0.7392831513695812,
+      "gap": 0.03949111373567127,
+      "separable": true
+    },
+    {
+      "id": "password-rotation",
+      "minP": 0.6416036239517432,
+      "maxN": 0.9135807254429474,
+      "gap": -0.27197710149120424,
+      "separable": false
+    },
+    {
+      "id": "laptop-request",
+      "minP": 0.7818161329889504,
+      "maxN": 0.7968717175999883,
+      "gap": -0.015055584611037953,
+      "separable": false
+    },
+    {
+      "id": "parental-leave-length",
+      "minP": 0.6666522479347571,
+      "maxN": 0.8328496277468768,
+      "gap": -0.16619737981211968,
+      "separable": false
+    },
+    {
+      "id": "vendor-approval",
+      "minP": 0.7362928417142087,
+      "maxN": 0.8677413112249621,
+      "gap": -0.1314484695107534,
+      "separable": false
+    },
+    {
+      "id": "data-retention",
+      "minP": 0.9082952616409931,
+      "maxN": 0.7991696799564014,
+      "gap": 0.10912558168459163,
+      "separable": true
+    },
+    {
+      "id": "code-review-sla",
+      "minP": 0.5831665665569117,
+      "maxN": 0.9018008686741024,
+      "gap": -0.3186343021171907,
+      "separable": false
+    },
+    {
+      "id": "expense-reimburse-time",
+      "minP": 0.7823104733286037,
+      "maxN": 0.8504677207911635,
+      "gap": -0.0681572474625598,
+      "separable": false
+    },
+    {
+      "id": "vpn-access",
+      "minP": 0.813560106021336,
+      "maxN": 0.806197704920618,
+      "gap": 0.007362401100717952,
+      "separable": true
+    },
+    {
+      "id": "promotion-cycle",
+      "minP": 0.7877540146339201,
+      "maxN": 0.815322431719142,
+      "gap": -0.02756841708522184,
+      "separable": false
+    },
+    {
+      "id": "incident-postmortem",
+      "minP": 0.6799766060647883,
+      "maxN": 0.8337589318724951,
+      "gap": -0.1537823258077068,
+      "separable": false
+    }
+  ],
+  "atDefault": {
+    "threshold": 0.86,
+    "hits": 12,
+    "misses": 33,
+    "misroutes": 0,
+    "falseHits": 5,
+    "correctlyMissed": 40
+  },
+  "best": {
+    "threshold": 0.84,
+    "hits": 19,
+    "misses": 26,
+    "misroutes": 0,
+    "falseHits": 7,
+    "correctlyMissed": 38
+  }
+}

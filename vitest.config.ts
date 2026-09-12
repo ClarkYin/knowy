@@ -10,6 +10,7 @@ export default defineConfig({
       { find: "@knowy/core", replacement: src("./packages/core/src/index.ts") },
       { find: "@knowy/index-memory", replacement: src("./packages/index-memory/src/index.ts") },
       { find: "@knowy/store-memory", replacement: src("./packages/store-memory/src/index.ts") },
+      { find: "@knowy/embed-local", replacement: src("./packages/embed-local/src/index.ts") },
     ],
   },
   test: {

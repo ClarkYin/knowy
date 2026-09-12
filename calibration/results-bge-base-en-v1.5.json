@@ -1,0 +1,336 @@
+{
+  "model": "Xenova/bge-base-en-v1.5",
+  "sweep": [
+    {
+      "threshold": 0.7,
+      "hits": 44,
+      "misses": 1,
+      "misroutes": 0,
+      "falseHits": 41,
+      "correctlyMissed": 4
+    },
+    {
+      "threshold": 0.71,
+      "hits": 43,
+      "misses": 2,
+      "misroutes": 0,
+      "falseHits": 41,
+      "correctlyMissed": 4
+    },
+    {
+      "threshold": 0.72,
+      "hits": 43,
+      "misses": 2,
+      "misroutes": 0,
+      "falseHits": 41,
+      "correctlyMissed": 4
+    },
+    {
+      "threshold": 0.73,
+      "hits": 42,
+      "misses": 3,
+      "misroutes": 0,
+      "falseHits": 41,
+      "correctlyMissed": 4
+    },
+    {
+      "threshold": 0.74,
+      "hits": 40,
+      "misses": 5,
+      "misroutes": 0,
+      "falseHits": 38,
+      "correctlyMissed": 7
+    },
+    {
+      "threshold": 0.75,
+      "hits": 40,
+      "misses": 5,
+      "misroutes": 0,
+      "falseHits": 37,
+      "correctlyMissed": 8
+    },
+    {
+      "threshold": 0.76,
+      "hits": 39,
+      "misses": 6,
+      "misroutes": 0,
+      "falseHits": 34,
+      "correctlyMissed": 11
+    },
+    {
+      "threshold": 0.77,
+      "hits": 35,
+      "misses": 10,
+      "misroutes": 0,
+      "falseHits": 33,
+      "correctlyMissed": 12
+    },
+    {
+      "threshold": 0.78,
+      "hits": 31,
+      "misses": 14,
+      "misroutes": 0,
+      "falseHits": 27,
+      "correctlyMissed": 18
+    },
+    {
+      "threshold": 0.79,
+      "hits": 30,
+      "misses": 15,
+      "misroutes": 0,
+      "falseHits": 25,
+      "correctlyMissed": 20
+    },
+    {
+      "threshold": 0.8,
+      "hits": 27,
+      "misses": 18,
+      "misroutes": 0,
+      "falseHits": 20,
+      "correctlyMissed": 25
+    },
+    {
+      "threshold": 0.81,
+      "hits": 25,
+      "misses": 20,
+      "misroutes": 0,
+      "falseHits": 16,
+      "correctlyMissed": 29
+    },
+    {
+      "threshold": 0.82,
+      "hits": 23,
+      "misses": 22,
+      "misroutes": 0,
+      "falseHits": 14,
+      "correctlyMissed": 31
+    },
+    {
+      "threshold": 0.83,
+      "hits": 23,
+      "misses": 22,
+      "misroutes": 0,
+      "falseHits": 13,
+      "correctlyMissed": 32
+    },
+    {
+      "threshold": 0.84,
+      "hits": 18,
+      "misses": 27,
+      "misroutes": 0,
+      "falseHits": 10,
+      "correctlyMissed": 35
+    },
+    {
+      "threshold": 0.85,
+      "hits": 12,
+      "misses": 33,
+      "misroutes": 0,
+      "falseHits": 10,
+      "correctlyMissed": 35
+    },
+    {
+      "threshold": 0.86,
+      "hits": 11,
+      "misses": 34,
+      "misroutes": 0,
+      "falseHits": 9,
+      "correctlyMissed": 36
+    },
+    {
+      "threshold": 0.87,
+      "hits": 10,
+      "misses": 35,
+      "misroutes": 0,
+      "falseHits": 6,
+      "correctlyMissed": 39
+    },
+    {
+      "threshold": 0.88,
+      "hits": 8,
+      "misses": 37,
+      "misroutes": 0,
+      "falseHits": 5,
+      "correctlyMissed": 40
+    },
+    {
+      "threshold": 0.89,
+      "hits": 6,
+      "misses": 39,
+      "misroutes": 0,
+      "falseHits": 5,
+      "correctlyMissed": 40
+    },
+    {
+      "threshold": 0.9,
+      "hits": 4,
+      "misses": 41,
+      "misroutes": 0,
+      "falseHits": 4,
+      "correctlyMissed": 41
+    },
+    {
+      "threshold": 0.91,
+      "hits": 2,
+      "misses": 43,
+      "misroutes": 0,
+      "falseHits": 2,
+      "correctlyMissed": 43
+    },
+    {
+      "threshold": 0.92,
+      "hits": 1,
+      "misses": 44,
+      "misroutes": 0,
+      "falseHits": 2,
+      "correctlyMissed": 43
+    },
+    {
+      "threshold": 0.93,
+      "hits": 0,
+      "misses": 45,
+      "misroutes": 0,
+      "falseHits": 1,
+      "correctlyMissed": 44
+    },
+    {
+      "threshold": 0.94,
+      "hits": 0,
+      "misses": 45,
+      "misroutes": 0,
+      "falseHits": 1,
+      "correctlyMissed": 44
+    },
+    {
+      "threshold": 0.95,
+      "hits": 0,
+      "misses": 45,
+      "misroutes": 0,
+      "falseHits": 0,
+      "correctlyMissed": 45
+    }
+  ],
+  "separability": [
+    {
+      "id": "refund-timing",
+      "minP": 0.8445079886702581,
+      "maxN": 0.8734640333078458,
+      "gap": -0.02895604463758772,
+      "separable": false
+    },
+    {
+      "id": "pto-accrual",
+      "minP": 0.7677116798962688,
+      "maxN": 0.8358552989191438,
+      "gap": -0.06814361902287502,
+      "separable": false
+    },
+    {
+      "id": "expense-limit",
+      "minP": 0.8365665946775933,
+      "maxN": 0.8647110422474756,
+      "gap": -0.028144447569882325,
+      "separable": false
+    },
+    {
+      "id": "prod-deploy",
+      "minP": 0.7030290854637885,
+      "maxN": 0.9034849078284525,
+      "gap": -0.20045582236466397,
+      "separable": false
+    },
+    {
+      "id": "oncall-escalation",
+      "minP": 0.8073358147908689,
+      "maxN": 0.7970117352393737,
+      "gap": 0.010324079551495169,
+      "separable": true
+    },
+    {
+      "id": "password-rotation",
+      "minP": 0.774677831418417,
+      "maxN": 0.9432100989750605,
+      "gap": -0.16853226755664352,
+      "separable": false
+    },
+    {
+      "id": "laptop-request",
+      "minP": 0.7620386759433131,
+      "maxN": 0.7986488326508536,
+      "gap": -0.03661015670754053,
+      "separable": false
+    },
+    {
+      "id": "parental-leave-length",
+      "minP": 0.7329019822744209,
+      "maxN": 0.8604855087722978,
+      "gap": -0.12758352649787685,
+      "separable": false
+    },
+    {
+      "id": "vendor-approval",
+      "minP": 0.759745723401531,
+      "maxN": 0.8903578950832896,
+      "gap": -0.13061217168175854,
+      "separable": false
+    },
+    {
+      "id": "data-retention",
+      "minP": 0.9050249499816814,
+      "maxN": 0.7568436541802328,
+      "gap": 0.14818129580144856,
+      "separable": true
+    },
+    {
+      "id": "code-review-sla",
+      "minP": 0.6975348405767785,
+      "maxN": 0.9086485209261845,
+      "gap": -0.21111368034940603,
+      "separable": false
+    },
+    {
+      "id": "expense-reimburse-time",
+      "minP": 0.7600407553824392,
+      "maxN": 0.8318826261343809,
+      "gap": -0.0718418707519417,
+      "separable": false
+    },
+    {
+      "id": "vpn-access",
+      "minP": 0.7651718832968202,
+      "maxN": 0.8020530292134938,
+      "gap": -0.036881145916673574,
+      "separable": false
+    },
+    {
+      "id": "promotion-cycle",
+      "minP": 0.8115465761896813,
+      "maxN": 0.8048182520680603,
+      "gap": 0.006728324121620943,
+      "separable": true
+    },
+    {
+      "id": "incident-postmortem",
+      "minP": 0.721778124080474,
+      "maxN": 0.8678370627881813,
+      "gap": -0.14605893870770725,
+      "separable": false
+    }
+  ],
+  "atDefault": {
+    "threshold": 0.86,
+    "hits": 11,
+    "misses": 34,
+    "misroutes": 0,
+    "falseHits": 9,
+    "correctlyMissed": 36
+  },
+  "best": {
+    "threshold": 0.83,
+    "hits": 23,
+    "misses": 22,
+    "misroutes": 0,
+    "falseHits": 13,
+    "correctlyMissed": 32
+  }
+}

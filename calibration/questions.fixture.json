@@ -1,0 +1,215 @@
+{
+  "_comment": "Hand-authored evaluation set. Each topic has one seed question (builds the object), paraphrases that express the SAME information need in different words (must HIT), and near-misses that are lexically adjacent but express a DIFFERENT information need (must MISS). Near-misses are the hard part and the point of the exercise: they share vocabulary and topic with the seed, so an embedding model that only captures topic will conflate them.",
+  "topics": [
+    {
+      "id": "refund-timing",
+      "seed": "How long do refunds take to process?",
+      "paraphrases": [
+        "What's the turnaround time on a refund?",
+        "When will I get my money back after requesting a refund?",
+        "How many days until a refund lands in my account?"
+      ],
+      "near_misses": [
+        "How long do refund disputes take to resolve?",
+        "What is the refund eligibility window?",
+        "How long does it take to process a new order?"
+      ]
+    },
+    {
+      "id": "pto-accrual",
+      "seed": "How much vacation time do I accrue per month?",
+      "paraphrases": [
+        "What's my monthly PTO accrual rate?",
+        "How quickly does paid time off build up?",
+        "How many vacation days do I earn each month?"
+      ],
+      "near_misses": [
+        "How much unused vacation time can I carry over into next year?",
+        "How do I request vacation time off?",
+        "How much sick leave do I accrue per month?"
+      ]
+    },
+    {
+      "id": "expense-limit",
+      "seed": "What is the per-meal expense limit when travelling?",
+      "paraphrases": [
+        "How much can I spend on a meal on a business trip?",
+        "What's the daily food allowance for travel?",
+        "What's the cap on meal expenses while away for work?"
+      ],
+      "near_misses": [
+        "What is the per-night hotel expense limit when travelling?",
+        "How do I submit a meal expense for reimbursement?",
+        "What is the meal expense limit for client entertainment?"
+      ]
+    },
+    {
+      "id": "prod-deploy",
+      "seed": "What is the process for deploying to production?",
+      "paraphrases": [
+        "How do I ship a release to prod?",
+        "What are the steps to push code live?",
+        "Walk me through the production deployment procedure."
+      ],
+      "near_misses": [
+        "What is the process for rolling back a production deployment?",
+        "What is the process for deploying to staging?",
+        "Who approves production deployments?"
+      ]
+    },
+    {
+      "id": "oncall-escalation",
+      "seed": "Who do I escalate to during an on-call incident?",
+      "paraphrases": [
+        "During an incident, who is the escalation contact?",
+        "If I'm on call and stuck, who do I page next?",
+        "What's the escalation path for on-call engineers?"
+      ],
+      "near_misses": [
+        "How do I swap an on-call shift with someone?",
+        "What counts as a severity-one incident?",
+        "Who do I escalate to for a customer billing complaint?"
+      ]
+    },
+    {
+      "id": "password-rotation",
+      "seed": "How often must I rotate my production credentials?",
+      "paraphrases": [
+        "What's the rotation frequency for prod secrets?",
+        "How frequently do production passwords need changing?",
+        "What is the required credential rotation interval for production?"
+      ],
+      "near_misses": [
+        "How do I rotate my production credentials?",
+        "How often must I rotate my development credentials?",
+        "Where are production credentials stored?"
+      ]
+    },
+    {
+      "id": "laptop-request",
+      "seed": "How do I request a replacement laptop?",
+      "paraphrases": [
+        "What's the process for getting a new work laptop?",
+        "My laptop died, how do I get another one?",
+        "How do I order replacement hardware?"
+      ],
+      "near_misses": [
+        "How do I return my laptop when I leave the company?",
+        "How do I request a second monitor?",
+        "Who do I contact if my laptop is stolen?"
+      ]
+    },
+    {
+      "id": "parental-leave-length",
+      "seed": "How many weeks of parental leave am I entitled to?",
+      "paraphrases": [
+        "What's the length of parental leave here?",
+        "How long can I take off for a new baby?",
+        "How many weeks of leave do new parents get?"
+      ],
+      "near_misses": [
+        "Is parental leave paid at full salary?",
+        "How much notice must I give before taking parental leave?",
+        "How many weeks of bereavement leave am I entitled to?"
+      ]
+    },
+    {
+      "id": "vendor-approval",
+      "seed": "What is the approval process for a new software vendor?",
+      "paraphrases": [
+        "How do I get a new SaaS tool approved?",
+        "What's the procedure for onboarding a software supplier?",
+        "How does a new vendor get signed off?"
+      ],
+      "near_misses": [
+        "What is the approval process for renewing an existing vendor contract?",
+        "What is the security review process for a new software vendor?",
+        "Who are our approved software vendors?"
+      ]
+    },
+    {
+      "id": "data-retention",
+      "seed": "How long do we retain customer data after account deletion?",
+      "paraphrases": [
+        "What's the retention period for deleted customer accounts?",
+        "After someone deletes their account, how long do we keep their data?",
+        "How long is customer data kept post-deletion?"
+      ],
+      "near_misses": [
+        "How long do we retain application logs?",
+        "How does a customer request deletion of their account?",
+        "Where is customer data stored geographically?"
+      ]
+    },
+    {
+      "id": "code-review-sla",
+      "seed": "What is the expected turnaround time for a code review?",
+      "paraphrases": [
+        "How quickly should PRs get reviewed?",
+        "What's the SLA on reviewing a pull request?",
+        "How long should I wait before chasing a code review?"
+      ],
+      "near_misses": [
+        "How many approvals does a pull request need?",
+        "What is the expected turnaround time for a security review?",
+        "What should I look for when reviewing code?"
+      ]
+    },
+    {
+      "id": "expense-reimburse-time",
+      "seed": "How long does expense reimbursement take to reach my account?",
+      "paraphrases": [
+        "When will I be paid back for expenses I submitted?",
+        "What's the payout time on an expense claim?",
+        "How many days until expense money reaches me?"
+      ],
+      "near_misses": [
+        "How long do I have to submit an expense claim?",
+        "How long does expense approval take?",
+        "How do I check the status of my expense claim?"
+      ]
+    },
+    {
+      "id": "vpn-access",
+      "seed": "How do I get VPN access for remote work?",
+      "paraphrases": [
+        "What's the process to request a VPN account?",
+        "How do I set up remote network access?",
+        "I need VPN, how do I request it?"
+      ],
+      "near_misses": [
+        "How do I troubleshoot a VPN connection that keeps dropping?",
+        "How do I get SSH access to production servers?",
+        "Do I need VPN to access internal tools?"
+      ]
+    },
+    {
+      "id": "promotion-cycle",
+      "seed": "When do promotion decisions happen each year?",
+      "paraphrases": [
+        "What months are promotions decided?",
+        "When is the promotion cycle run?",
+        "At what point in the year are promotion outcomes announced?"
+      ],
+      "near_misses": [
+        "What criteria are used for promotion decisions?",
+        "When do salary reviews happen each year?",
+        "Who decides promotions?"
+      ]
+    },
+    {
+      "id": "incident-postmortem",
+      "seed": "When is a postmortem required after an incident?",
+      "paraphrases": [
+        "Which incidents need a writeup afterwards?",
+        "Under what conditions must we run a postmortem?",
+        "Do all incidents require a retrospective document?"
+      ],
+      "near_misses": [
+        "Who writes the postmortem after an incident?",
+        "What sections must a postmortem document contain?",
+        "When is an incident considered resolved?"
+      ]
+    }
+  ]
+}

@@ -4,13 +4,31 @@
     "noEmit": true,
     "declaration": false,
     "baseUrl": ".",
-    "types": ["node"],
+    "types": [
+      "node"
+    ],
     "paths": {
-      "@knowy/core": ["./packages/core/src/index.ts"],
-      "@knowy/core/testing": ["./packages/core/src/testing/index.ts"],
-      "@knowy/index-memory": ["./packages/index-memory/src/index.ts"],
-      "@knowy/store-memory": ["./packages/store-memory/src/index.ts"]
+      "@knowy/core": [
+        "./packages/core/src/index.ts"
+      ],
+      "@knowy/core/testing": [
+        "./packages/core/src/testing/index.ts"
+      ],
+      "@knowy/index-memory": [
+        "./packages/index-memory/src/index.ts"
+      ],
+      "@knowy/store-memory": [
+        "./packages/store-memory/src/index.ts"
+      ],
+      "@knowy/embed-local": [
+        "./packages/embed-local/src/index.ts"
+      ]
     }
   },
-  "include": ["packages/*/src", "packages/*/test", "examples"]
+  "include": [
+    "packages/*/src",
+    "packages/*/test",
+    "examples",
+    "calibration"
+  ]
 }

@@ -11,7 +11,8 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "typecheck": "pnpm --filter @knowy/core build && pnpm -r exec tsc --noEmit && tsc -p tsconfig.test.json",
-    "example": "pnpm -r build && node --experimental-strip-types examples/cold-to-warm.ts"
+    "example": "pnpm -r build && node --experimental-strip-types examples/cold-to-warm.ts",
+    "calibrate": "pnpm -r build && node --experimental-strip-types calibration/run.ts"
   },
   "devDependencies": {
     "typescript": "^5.6.0",
@@ -19,6 +20,7 @@
     "@types/node": "^22.7.0",
     "@knowy/core": "workspace:*",
     "@knowy/index-memory": "workspace:*",
-    "@knowy/store-memory": "workspace:*"
+    "@knowy/store-memory": "workspace:*",
+    "@knowy/embed-local": "workspace:*"
   }
 }
