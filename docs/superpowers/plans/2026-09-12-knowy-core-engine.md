@@ -85,7 +85,7 @@ ACM is the only place that composes them.
 - Consumes: nothing (first task).
 - Produces: every type in `packages/core/src/types/`, `DEFAULT_CONFIG`, `validateObject(obj: unknown): asserts obj is IntelligenceObject`, and the fixture builders `makeObject(overrides?: Partial<IntelligenceObject>): IntelligenceObject` and `makeEvidence(overrides?: Partial<Evidence>): Evidence`. Every later task depends on these.
 
-- [ ] **Step 1: Initialise the workspace**
+- [x] **Step 1: Initialise the workspace**
 
 ```bash
 cd /Users/clarkyin/Development/knowy
@@ -157,7 +157,7 @@ export default defineConfig({
 
 Run `pnpm install`.
 
-- [ ] **Step 2: Create the core package shell**
+- [x] **Step 2: Create the core package shell**
 
 `packages/core/package.json`:
 
@@ -187,7 +187,7 @@ Run `pnpm install`.
 }
 ```
 
-- [ ] **Step 3: Write the failing tests for object invariants and core purity**
+- [x] **Step 3: Write the failing tests for object invariants and core purity**
 
 `packages/core/test/object/validate.test.ts`:
 
@@ -264,12 +264,12 @@ describe("core purity", () => {
 });
 ```
 
-- [ ] **Step 4: Run the tests to verify they fail**
+- [x] **Step 4: Run the tests to verify they fail**
 
 Run: `pnpm vitest run packages/core`
 Expected: FAIL — `Cannot find module '../../src/object/validate.js'`.
 
-- [ ] **Step 5: Write the type modules**
+- [x] **Step 5: Write the type modules**
 
 `packages/core/src/types/evidence.ts`:
 
@@ -501,7 +501,7 @@ export interface Clock {
 Note `markVerified` on `ObjectStore`: a verify-tier hit extends `last_verified_at`
 without writing a new object version (spec §11).
 
-- [ ] **Step 6: Write the fixtures and the validator**
+- [x] **Step 6: Write the fixtures and the validator**
 
 `packages/core/src/testing/fixtures.ts`:
 
@@ -601,12 +601,12 @@ export * from "./types/ports.js";
 export * from "./object/validate.js";
 ```
 
-- [ ] **Step 7: Run the tests to verify they pass**
+- [x] **Step 7: Run the tests to verify they pass**
 
 Run: `pnpm vitest run packages/core && pnpm typecheck`
 Expected: PASS — every test in this task's files green, and the full suite still green.
 
-- [ ] **Step 8: Add CI**
+- [x] **Step 8: Add CI**
 
 `.github/workflows/ci.yml`:
 
@@ -627,7 +627,7 @@ jobs:
       - run: pnpm test
 ```
 
-- [ ] **Step 9: Commit**
+- [x] **Step 9: Commit**
 
 ```bash
 git add -A
@@ -647,7 +647,7 @@ git commit -m "feat: workspace, core types, and intelligence object invariants"
 - Consumes: `IntelligenceObject`, `FreshnessMode` from Task 1; `makeObject` from `src/testing/fixtures.ts`.
 - Produces: `freshUntil(obj: IntelligenceObject): Date`, `isWithinTtl(obj: IntelligenceObject, now: Date): boolean`, `needsFingerprintCheck(input: { object: IntelligenceObject | null; now: Date; requested: FreshnessMode }): boolean`. Tasks 4 and 9 use all three.
 
-- [ ] **Step 1: Write the failing test**
+- [x] **Step 1: Write the failing test**
 
 `packages/core/test/freshness/ttl.test.ts`:
 
@@ -719,12 +719,12 @@ describe("needsFingerprintCheck", () => {
 });
 ```
 
-- [ ] **Step 2: Run the test to verify it fails**
+- [x] **Step 2: Run the test to verify it fails**
 
 Run: `pnpm vitest run packages/core/test/freshness/ttl.test.ts`
 Expected: FAIL — `Cannot find module '../../src/freshness/ttl.js'`.
 
-- [ ] **Step 3: Write the implementation**
+- [x] **Step 3: Write the implementation**
 
 `packages/core/src/freshness/ttl.ts`:
 
@@ -767,12 +767,12 @@ Add to `packages/core/src/index.ts`:
 export * from "./freshness/ttl.js";
 ```
 
-- [ ] **Step 4: Run the test to verify it passes**
+- [x] **Step 4: Run the test to verify it passes**
 
 Run: `pnpm vitest run packages/core && pnpm typecheck`
 Expected: PASS — every test in this task's files green, and the full suite still green.
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 ```bash
 git add -A
@@ -792,7 +792,7 @@ git commit -m "feat: TTL window and fingerprint-check decision"
 - Consumes: `EvidenceRef`, `Fingerprint` from Task 1; `makeEvidenceRef` from fixtures.
 - Produces: `EvidenceDiff` (`{ unchanged: string[]; changed: string[]; deleted: string[]; unknown: string[]; total: number; churnRatio: number }`) and `diffEvidence(refs: readonly EvidenceRef[], fingerprints: ReadonlyMap<string, Fingerprint | null>): EvidenceDiff`. Tasks 4 and 9 consume both.
 
-- [ ] **Step 1: Write the failing test**
+- [x] **Step 1: Write the failing test**
 
 `packages/core/test/freshness/diff.test.ts`:
 
@@ -859,12 +859,12 @@ describe("diffEvidence", () => {
 });
 ```
 
-- [ ] **Step 2: Run the test to verify it fails**
+- [x] **Step 2: Run the test to verify it fails**
 
 Run: `pnpm vitest run packages/core/test/freshness/diff.test.ts`
 Expected: FAIL — `Cannot find module '../../src/freshness/diff.js'`.
 
-- [ ] **Step 3: Write the implementation**
+- [x] **Step 3: Write the implementation**
 
 `packages/core/src/freshness/diff.ts`:
 
@@ -925,12 +925,12 @@ Add to `packages/core/src/index.ts`:
 export * from "./freshness/diff.js";
 ```
 
-- [ ] **Step 4: Run the test to verify it passes**
+- [x] **Step 4: Run the test to verify it passes**
 
 Run: `pnpm vitest run packages/core && pnpm typecheck`
 Expected: PASS — every test in this task's files green, and the full suite still green.
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 ```bash
 git add -A
@@ -950,7 +950,7 @@ git commit -m "feat: evidence fingerprint diffing with fail-safe unknown handlin
 - Consumes: `isWithinTtl` (Task 2), `EvidenceDiff` (Task 3), `KnowyConfig`/`DEFAULT_CONFIG`, `Tier`, `FreshnessMode`, `IntelligenceObject` (Task 1).
 - Produces: `RefreshPlan` (`{ tier: Tier; reason: string; patchEvidenceIds: string[]; removedEvidenceIds: string[] }`) and `planRefresh(input: { object: IntelligenceObject | null; diff: EvidenceDiff | null; now: Date; requested: FreshnessMode; config: KnowyConfig }): RefreshPlan`. Task 9 consumes both.
 
-- [ ] **Step 1: Write the failing test**
+- [x] **Step 1: Write the failing test**
 
 `packages/core/test/freshness/planner.test.ts`:
 
@@ -1062,12 +1062,12 @@ describe("planRefresh", () => {
 });
 ```
 
-- [ ] **Step 2: Run the test to verify it fails**
+- [x] **Step 2: Run the test to verify it fails**
 
 Run: `pnpm vitest run packages/core/test/freshness/planner.test.ts`
 Expected: FAIL — `Cannot find module '../../src/freshness/planner.js'`.
 
-- [ ] **Step 3: Write the implementation**
+- [x] **Step 3: Write the implementation**
 
 `packages/core/src/freshness/planner.ts`:
 
@@ -1140,12 +1140,12 @@ Add to `packages/core/src/index.ts`:
 export * from "./freshness/planner.js";
 ```
 
-- [ ] **Step 4: Run the test to verify it passes**
+- [x] **Step 4: Run the test to verify it passes**
 
 Run: `pnpm vitest run packages/core && pnpm typecheck`
 Expected: PASS — every test in this task's files green, and the full suite still green.
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 ```bash
 git add -A
@@ -1165,7 +1165,7 @@ git commit -m "feat: refresh planner selecting verify/patch/rebuild tiers"
 - Consumes: `IntelligenceObject`, `KnowyConfig`, `DEFAULT_CONFIG` from Task 1.
 - Produces: `GateResult` (`{ pass: boolean; reason: string }`, shared with Task 6) and `passesCoverage(input: { matchScore: number; object: IntelligenceObject; config: KnowyConfig }): GateResult`. Task 9 consumes both.
 
-- [ ] **Step 1: Write the failing test**
+- [x] **Step 1: Write the failing test**
 
 `packages/core/test/gates/coverage.test.ts`:
 
@@ -1219,12 +1219,12 @@ describe("passesCoverage", () => {
 });
 ```
 
-- [ ] **Step 2: Run the test to verify it fails**
+- [x] **Step 2: Run the test to verify it fails**
 
 Run: `pnpm vitest run packages/core/test/gates/coverage.test.ts`
 Expected: FAIL — `Cannot find module '../../src/gates/coverage.js'`.
 
-- [ ] **Step 3: Write the implementation**
+- [x] **Step 3: Write the implementation**
 
 `packages/core/src/gates/result.ts`:
 
@@ -1277,12 +1277,12 @@ export * from "./gates/result.js";
 export * from "./gates/coverage.js";
 ```
 
-- [ ] **Step 4: Run the test to verify it passes**
+- [x] **Step 4: Run the test to verify it passes**
 
 Run: `pnpm vitest run packages/core && pnpm typecheck`
 Expected: PASS — every test in this task's files green, and the full suite still green.
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 ```bash
 git add -A
@@ -1302,7 +1302,7 @@ git commit -m "feat: coverage gate guarding against false hits"
 - Consumes: `GateResult` (Task 5), `IntelligenceObject`, `KnowyConfig` (Task 1).
 - Produces: `isPermitted(input: { object: IntelligenceObject; granted: readonly string[]; config: KnowyConfig }): GateResult` and `aclUnion(evidence: readonly { acl: string[] }[]): string[]`. Task 9 consumes both.
 
-- [ ] **Step 1: Write the failing test**
+- [x] **Step 1: Write the failing test**
 
 `packages/core/test/gates/permission.test.ts`:
 
@@ -1362,12 +1362,12 @@ describe("isPermitted (tenant_only)", () => {
 });
 ```
 
-- [ ] **Step 2: Run the test to verify it fails**
+- [x] **Step 2: Run the test to verify it fails**
 
 Run: `pnpm vitest run packages/core/test/gates/permission.test.ts`
 Expected: FAIL — `Cannot find module '../../src/gates/permission.js'`.
 
-- [ ] **Step 3: Write the implementation**
+- [x] **Step 3: Write the implementation**
 
 `packages/core/src/gates/permission.ts`:
 
@@ -1418,12 +1418,12 @@ Add to `packages/core/src/index.ts`:
 export * from "./gates/permission.js";
 ```
 
-- [ ] **Step 4: Run the test to verify it passes**
+- [x] **Step 4: Run the test to verify it passes**
 
 Run: `pnpm vitest run packages/core && pnpm typecheck`
 Expected: PASS — every test in this task's files green, and the full suite still green.
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 ```bash
 git add -A
@@ -1443,7 +1443,7 @@ git commit -m "feat: permission gate enforcing acl-union subset checks"
 - Consumes: `Savings` (Task 1), `Evidence` (Task 1).
 - Produces: `estimateTokens(text: string): number`, `baselineFromEvidence(evidence: readonly Evidence[]): number`, and `computeSavings(input: { baselineTokens: number; actualTokens: number; baselineIsEstimate: boolean }): Savings`. Task 9 consumes all three.
 
-- [ ] **Step 1: Write the failing test**
+- [x] **Step 1: Write the failing test**
 
 `packages/core/test/accounting/savings.test.ts`:
 
@@ -1493,12 +1493,12 @@ describe("computeSavings", () => {
 });
 ```
 
-- [ ] **Step 2: Run the test to verify it fails**
+- [x] **Step 2: Run the test to verify it fails**
 
 Run: `pnpm vitest run packages/core/test/accounting/savings.test.ts`
 Expected: FAIL — `Cannot find module '../../src/accounting/savings.js'`.
 
-- [ ] **Step 3: Write the implementation**
+- [x] **Step 3: Write the implementation**
 
 `packages/core/src/accounting/savings.ts`:
 
@@ -1544,12 +1544,12 @@ Add to `packages/core/src/index.ts`:
 export * from "./accounting/savings.js";
 ```
 
-- [ ] **Step 4: Run the test to verify it passes**
+- [x] **Step 4: Run the test to verify it passes**
 
 Run: `pnpm vitest run packages/core && pnpm typecheck`
 Expected: PASS — every test in this task's files green, and the full suite still green.
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 ```bash
 git add -A
@@ -1574,7 +1574,7 @@ git commit -m "feat: token accounting with honest baseline estimates"
 
 **Contract clarification this task locks in:** in `fingerprint()`, a **`null` value means the index knows the id is gone or never existed**; an **absent key means the index could not answer** (timeout, partial failure). `diffEvidence` classifies the first as `deleted` and the second as `unknown`, and both count toward churn.
 
-- [ ] **Step 1: Write the failing cosine test**
+- [x] **Step 1: Write the failing cosine test**
 
 `packages/core/test/math/cosine.test.ts`:
 
@@ -1605,12 +1605,12 @@ describe("cosine", () => {
 });
 ```
 
-- [ ] **Step 2: Run it to verify it fails**
+- [x] **Step 2: Run it to verify it fails**
 
 Run: `pnpm vitest run packages/core/test/math/cosine.test.ts`
 Expected: FAIL — module not found.
 
-- [ ] **Step 3: Implement cosine**
+- [x] **Step 3: Implement cosine**
 
 `packages/core/src/math/cosine.ts`:
 
@@ -1636,7 +1636,7 @@ export function cosine(a: readonly number[], b: readonly number[]): number {
 
 Add `export * from "./math/cosine.js";` to `packages/core/src/index.ts`.
 
-- [ ] **Step 4: Write the conformance suites**
+- [x] **Step 4: Write the conformance suites**
 
 Add vitest to `packages/core/package.json`:
 
@@ -1880,7 +1880,7 @@ export * from "./index-suite.js";
 export * from "./store-suite.js";
 ```
 
-- [ ] **Step 5: Write the adapter test files, which fail because the adapters do not exist**
+- [x] **Step 5: Write the adapter test files, which fail because the adapters do not exist**
 
 `packages/index-memory/test/conformance.test.ts`:
 
@@ -1909,12 +1909,12 @@ import { MemoryObjectStore } from "../src/index.js";
 runStoreConformance("MemoryObjectStore", async () => new MemoryObjectStore());
 ```
 
-- [ ] **Step 6: Run them to verify they fail**
+- [x] **Step 6: Run them to verify they fail**
 
 Run: `pnpm vitest run packages/index-memory packages/store-memory`
 Expected: FAIL — `Cannot find module '../src/index.js'`.
 
-- [ ] **Step 7: Implement MemoryIndex**
+- [x] **Step 7: Implement MemoryIndex**
 
 `packages/index-memory/package.json` (and an equivalent `tsconfig.json` copying `packages/core/tsconfig.json`):
 
@@ -2008,7 +2008,7 @@ export class MemoryIndex implements RawEvidenceIndex {
 }
 ```
 
-- [ ] **Step 8: Implement MemoryObjectStore**
+- [x] **Step 8: Implement MemoryObjectStore**
 
 `packages/store-memory/package.json` mirrors the one above with `"name": "@knowy/store-memory"`.
 
@@ -2094,12 +2094,12 @@ export class MemoryObjectStore implements ObjectStore {
 `invalidate` is the one place an in-memory *adapter* may read the wall clock — the
 purity constraint binds `@knowy/core`, not adapters.
 
-- [ ] **Step 9: Run the conformance suites to verify they pass**
+- [x] **Step 9: Run the conformance suites to verify they pass**
 
 Run: `pnpm install && pnpm -r build && pnpm vitest run`
 Expected: PASS — both conformance suites green, and the full suite still green.
 
-- [ ] **Step 10: Commit**
+- [x] **Step 10: Commit**
 
 ```bash
 git add -A
@@ -2119,7 +2119,7 @@ git commit -m "feat: in-memory adapters validated by shared conformance suites"
 - Consumes: `needsFingerprintCheck` (2), `diffEvidence` (3), `planRefresh` (4), `passesCoverage` (5), `isPermitted`/`aclUnion` (6), `computeSavings`/`baselineFromEvidence`/`estimateTokens` (7), `MemoryIndex`/`MemoryObjectStore` (8), `validateObject` (1).
 - Produces: `AgentContextManager` with `ask(req: AskRequest): Promise<AskResponse>`, the protected helpers `rebuild`, `applyPatch`, `serve`, `serveEmpty`, `serveDegraded`, its constructor type `AcmDeps`, and `FreshnessUnavailableError`. Task 10 extends the same class.
 
-- [ ] **Step 1: Write the test doubles**
+- [x] **Step 1: Write the test doubles**
 
 `packages/core/test/acm/doubles.ts`:
 
@@ -2174,7 +2174,7 @@ export class FakeSynthesizer implements Synthesizer {
 }
 ```
 
-- [ ] **Step 2: Write the failing test**
+- [x] **Step 2: Write the failing test**
 
 `packages/core/test/acm/context-manager.test.ts`:
 
@@ -2365,12 +2365,12 @@ describe("AgentContextManager.ask", () => {
 });
 ```
 
-- [ ] **Step 3: Run the test to verify it fails**
+- [x] **Step 3: Run the test to verify it fails**
 
 Run: `pnpm vitest run packages/core/test/acm`
 Expected: FAIL — `Cannot find module '../../src/acm/context-manager.js'`.
 
-- [ ] **Step 4: Write the implementation**
+- [x] **Step 4: Write the implementation**
 
 `packages/core/src/acm/context-manager.ts`:
 
@@ -2690,12 +2690,12 @@ export * from "./acm/context-manager.js";
 **devDependencies only** (`"workspace:*"`), used by the ACM tests. Core's runtime
 dependencies stay empty.
 
-- [ ] **Step 5: Run the test to verify it passes**
+- [x] **Step 5: Run the test to verify it passes**
 
 Run: `pnpm vitest run && pnpm typecheck`
 Expected: PASS — every ACM test green, and the full suite still green.
 
-- [ ] **Step 6: Commit**
+- [x] **Step 6: Commit**
 
 ```bash
 git add -A
@@ -2716,7 +2716,7 @@ git commit -m "feat: agent context manager resolving asks across all four tiers"
 - Consumes: everything from Task 9.
 - Produces: `AgentContextManager.refresh(input: { tenant_id: string; object_id: string; granted_permissions: string[]; mode?: "auto" | "rebuild" }): Promise<AskResponse>` and `AgentContextManager.invalidate(tenantId: string, selector: InvalidateSelector): Promise<number>`. Plan 2's HTTP layer calls both.
 
-- [ ] **Step 1: Write the failing test**
+- [x] **Step 1: Write the failing test**
 
 `packages/core/test/acm/refresh.test.ts`:
 
@@ -2813,12 +2813,12 @@ describe("AgentContextManager.refresh and .invalidate", () => {
 });
 ```
 
-- [ ] **Step 2: Run the test to verify it fails**
+- [x] **Step 2: Run the test to verify it fails**
 
 Run: `pnpm vitest run packages/core/test/acm/refresh.test.ts`
 Expected: FAIL — `acm.refresh is not a function`.
 
-- [ ] **Step 3: Implement refresh and invalidate**
+- [x] **Step 3: Implement refresh and invalidate**
 
 Add to `AgentContextManager` in `packages/core/src/acm/context-manager.ts`, and add
 `InvalidateSelector` to the `types/ports.js` import list at the top of the file:
@@ -2900,12 +2900,12 @@ One subtlety worth keeping: a verify-tier refresh clears `invalidated_at`, becau
 fingerprint check has now answered the question the invalidation was asking. Without
 that, an invalidated object would rebuild forever.
 
-- [ ] **Step 4: Run the test to verify it passes**
+- [x] **Step 4: Run the test to verify it passes**
 
 Run: `pnpm vitest run && pnpm typecheck`
 Expected: PASS — every refresh test green, and the full suite still green.
 
-- [ ] **Step 5: Write the runnable demo**
+- [x] **Step 5: Write the runnable demo**
 
 `examples/cold-to-warm.ts`:
 
@@ -3003,13 +3003,13 @@ Add to the root `package.json` scripts:
     "example": "pnpm -r build && node --experimental-strip-types examples/cold-to-warm.ts"
 ```
 
-- [ ] **Step 6: Run the demo and confirm the tiers**
+- [x] **Step 6: Run the demo and confirm the tiers**
 
 Run: `pnpm example`
 Expected output — four lines showing `tier=rebuilt`, then `tier=verified` with
 `saved` greater than zero, then `tier=patched`, then `tier=rebuilt`.
 
-- [ ] **Step 7: Commit**
+- [x] **Step 7: Commit**
 
 ```bash
 git add -A
