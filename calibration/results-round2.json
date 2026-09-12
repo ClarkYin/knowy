@@ -92,26 +92,58 @@
       "rawFalse": 8
     },
     {
-      "label": "C  cosine >= 0.78 + rerank >= -1.00",
-      "hitRate": 0.6888888888888889,
-      "falseHits": 25,
-      "hits": 31,
+      "label": "C  cosine >= 0.78 + rerank >= -0.6",
+      "hitRate": 0.6222222222222222,
+      "falseHits": 24,
+      "hits": 28,
       "misroutes": 0,
-      "rawFalse": 25
+      "rawFalse": 24
     },
     {
-      "label": "C  cosine >= 0.78 + rerank >= -1.00",
-      "hitRate": 0.6888888888888889,
-      "falseHits": 25,
-      "hits": 31,
+      "label": "C  cosine >= 0.78 + rerank >= 2.5",
+      "hitRate": 0.4666666666666667,
+      "falseHits": 22,
+      "hits": 21,
       "misroutes": 0,
-      "rawFalse": 25
+      "rawFalse": 22
     },
     {
-      "label": "C  cosine >= 0.78 + rerank >= -1.00",
-      "hitRate": 0.6888888888888889,
+      "label": "C  cosine >= 0.78 + rerank >= 4.0",
+      "hitRate": 0.35555555555555557,
+      "falseHits": 20,
+      "hits": 16,
+      "misroutes": 0,
+      "rawFalse": 20
+    },
+    {
+      "label": "C  cosine >= 0.78 + rerank >= 5.2",
+      "hitRate": 0.2,
+      "falseHits": 20,
+      "hits": 9,
+      "misroutes": 0,
+      "rawFalse": 20
+    },
+    {
+      "label": "C  cosine >= 0.78 + rerank >= 6.6",
+      "hitRate": 0.1111111111111111,
+      "falseHits": 15,
+      "hits": 5,
+      "misroutes": 0,
+      "rawFalse": 15
+    },
+    {
+      "label": "C  rerank only >= 2.5",
+      "hitRate": 0.5333333333333333,
+      "falseHits": 30,
+      "hits": 24,
+      "misroutes": 0,
+      "rawFalse": 30
+    },
+    {
+      "label": "C  rerank only >= 5.2",
+      "hitRate": 0.24444444444444444,
       "falseHits": 25,
-      "hits": 31,
+      "hits": 11,
       "misroutes": 0,
       "rawFalse": 25
     }

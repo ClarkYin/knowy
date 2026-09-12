@@ -111,6 +111,8 @@ for (const ct of [0.78, 0.82]) {
   }
 }
 
+let ceAvailable = false;
+
 // C — cross-encoder reranking.
 // Scored against the object's EVIDENCE TEXT, not its canonical question: ms-marco
 // rerankers are trained on query/passage pairs, and feeding them question/question
@@ -138,6 +140,7 @@ try {
     const { logits } = await model(inputs);
     ce.push(logits.tolist()[0][0] as number);
   }
+  ceAvailable = true;
   const sorted = [...ce].sort((x, y) => x - y);
   for (const q of [0.2, 0.4, 0.5, 0.6, 0.75]) {
     const t = sorted[Math.floor(sorted.length * q)]!;
