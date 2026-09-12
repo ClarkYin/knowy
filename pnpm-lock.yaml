@@ -8,6 +8,15 @@ importers:
 
   .:
     devDependencies:
+      '@knowy/core':
+        specifier: workspace:*
+        version: link:packages/core
+      '@knowy/index-memory':
+        specifier: workspace:*
+        version: link:packages/index-memory
+      '@knowy/store-memory':
+        specifier: workspace:*
+        version: link:packages/store-memory
       '@types/node':
         specifier: ^22.7.0
         version: 22.20.2
