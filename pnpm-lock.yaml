@@ -8,6 +8,9 @@ importers:
 
   .:
     devDependencies:
+      '@huggingface/transformers':
+        specifier: ^3.0.0
+        version: 3.8.1
       '@knowy/core':
         specifier: workspace:*
         version: link:packages/core

@@ -1,0 +1,125 @@
+{
+  "_comment": "Realistic policy documents, chunked by paragraph. Deliberately NOT one chunk per information need: related needs (e.g. refund timing and refund disputes) often share a document, which is how real knowledge bases look and which makes evidence-overlap gating a genuinely hard test rather than a rigged one.",
+  "documents": [
+    {
+      "uri": "confluence://finance/refunds",
+      "chunks": [
+        "Refund processing. Approved refunds are returned to the original payment method within 5 business days. Card issuers may add a further 2-3 days before funds appear on a statement. Customers are notified by email when the refund is issued, not when it settles.",
+        "Refund eligibility. Refunds may be requested within 30 days of purchase for unused services. Digital goods become non-refundable once downloaded. Enterprise contracts are governed by the termination clause in the master agreement rather than this policy.",
+        "Refund disputes. Where a customer disputes a refund decision, the case is escalated to the finance review board, which meets fortnightly. Disputed cases typically take 4 to 6 weeks to resolve, substantially longer than a standard refund, and require the original order reference.",
+        "Chargebacks. A chargeback initiated with the card issuer bypasses this process entirely and is handled by the payments team."
+      ]
+    },
+    {
+      "uri": "confluence://hr/time-off",
+      "chunks": [
+        "Vacation accrual. Full-time employees accrue 1.75 days of paid vacation per month, totalling 21 days per year. Accrual begins on the first day of employment and is credited at month end.",
+        "Vacation carry-over. Up to 5 unused vacation days may be carried into the following calendar year and must be used by 31 March. Days beyond that cap are forfeited and are not paid out except on termination.",
+        "Requesting time off. Vacation is requested through the HR portal and requires manager approval. Requests of more than 5 consecutive days should be submitted at least 3 weeks in advance.",
+        "Sick leave. Sick leave accrues separately at 0.83 days per month, to a maximum of 10 days per year. It does not carry over and is not paid out on termination.",
+        "Bereavement leave. Employees are entitled to 5 days of paid bereavement leave for an immediate family member and 2 days otherwise."
+      ]
+    },
+    {
+      "uri": "confluence://hr/parental-leave",
+      "chunks": [
+        "Parental leave duration. Primary caregivers are entitled to 18 weeks of parental leave. Secondary caregivers are entitled to 6 weeks. Both may be taken in up to three separate blocks within the first 12 months.",
+        "Parental leave pay. The first 12 weeks are paid at 100% of base salary. Weeks 13 to 18 are paid at 60%. Equity vesting continues uninterrupted throughout.",
+        "Parental leave notice. Employees should give at least 8 weeks notice before commencing parental leave so that cover can be arranged, though this is waived in the case of premature birth."
+      ]
+    },
+    {
+      "uri": "confluence://finance/expenses",
+      "chunks": [
+        "Meal expenses while travelling. The per-meal limit is 35 USD for breakfast, 25 USD for lunch, and 60 USD for dinner, inclusive of tax and gratuity. Receipts are required for any single item above 25 USD.",
+        "Client entertainment. Meals with clients are not subject to the standard per-meal travel limits and are instead capped at 150 USD per head, requiring director approval in advance.",
+        "Accommodation. Hotel spend is capped at 250 USD per night in tier-one cities and 160 USD elsewhere. Bookings should be made through the corporate travel portal.",
+        "Submitting a claim. Expense claims are submitted through the finance portal with itemised receipts attached. Claims must be submitted within 60 days of the expense being incurred or they will not be honoured.",
+        "Reimbursement timing. Approved expense claims are paid in the next payroll run, which means reimbursement reaches your account within 10 to 15 business days of approval. Approval itself typically takes 3 business days.",
+        "Claim status. The status of a submitted claim is visible in the finance portal under My Claims."
+      ]
+    },
+    {
+      "uri": "confluence://eng/deployment",
+      "chunks": [
+        "Deploying to production. Production deploys run from the main branch through the release pipeline. Open a release ticket, wait for CI to pass on the release candidate, obtain sign-off from a service owner, then trigger the deploy job. Deploys are frozen on Fridays and during announced code freezes.",
+        "Deploying to staging. Staging deploys are automatic on every merge to main and require no approval or ticket.",
+        "Production deploy approval. A service owner listed in the service catalogue must approve. For services tagged tier-one, a second approver from the platform team is also required.",
+        "Rolling back. To roll back a production deployment, re-run the deploy job pinned to the previous release tag. Rollbacks skip the approval requirement and should be announced in the incident channel. Database migrations are not reversed automatically and must be handled separately."
+      ]
+    },
+    {
+      "uri": "confluence://eng/oncall",
+      "chunks": [
+        "On-call escalation. If a primary on-call engineer cannot resolve an incident within 30 minutes, escalate to the secondary on-call for that service, then to the engineering manager on the escalation rota, then to the director of engineering.",
+        "Shift swaps. On-call shifts may be swapped with any other engineer on the same rota by agreement, recorded in the scheduling tool at least 24 hours ahead.",
+        "Incident severity. A severity-one incident is a complete outage of a customer-facing service or any confirmed data loss. Severity two is significant degradation with a workaround available.",
+        "Incident resolution. An incident is considered resolved when customer impact has ended and monitoring has been stable for 30 minutes.",
+        "Postmortems. A postmortem is required for every severity-one incident and for any severity-two incident lasting more than 4 hours. It is authored by the incident commander within 5 working days and must contain a timeline, root cause, customer impact, and action items with owners."
+      ]
+    },
+    {
+      "uri": "confluence://security/credentials",
+      "chunks": [
+        "Production credential rotation frequency. Production credentials must be rotated every 90 days. Automated rotation is enabled by default for services onboarded to the secrets manager, and exceptions require security team sign-off.",
+        "How to rotate production credentials. Use the secrets CLI to issue a new version, deploy the referencing services, then revoke the prior version once no service reports the old credential in use.",
+        "Development credentials. Development and staging credentials rotate every 180 days and may be rotated manually.",
+        "Credential storage. Production credentials are held in the secrets manager. Storing them in source control, environment files, or ticket comments is prohibited and is flagged automatically by secret scanning."
+      ]
+    },
+    {
+      "uri": "confluence://it/hardware",
+      "chunks": [
+        "Replacement laptops. To request a replacement laptop, file an IT service ticket describing the fault. Standard replacements ship within 3 working days. Machines more than 3 years old are replaced on request without justification.",
+        "Peripherals. Monitors, keyboards, and headsets are ordered through the same IT ticket queue and do not require manager approval below 300 USD.",
+        "Lost or stolen equipment. Report a lost or stolen laptop to the security team immediately so the device can be remotely wiped, then file an IT ticket for a replacement.",
+        "Returning equipment. On leaving the company, all hardware is returned to IT on or before the final working day using the prepaid shipping label issued by People Ops."
+      ]
+    },
+    {
+      "uri": "confluence://it/network-access",
+      "chunks": [
+        "VPN access. Request VPN access through the IT portal under Network Access. Approval is automatic for full-time employees and requires manager approval for contractors. Setup instructions and the client download are linked from the approval email.",
+        "VPN troubleshooting. If the VPN disconnects repeatedly, first switch from UDP to TCP transport in the client settings, then confirm the device certificate has not expired. Persistent failures should go to the IT queue with the client log attached.",
+        "Internal tools and VPN. Most internal tools are behind the identity proxy and do not require VPN. VPN is needed only for direct database access and legacy systems.",
+        "SSH access to production. Production SSH access is granted separately from VPN, requires security team approval, and is time-bound to 8 hours per session."
+      ]
+    },
+    {
+      "uri": "confluence://legal/vendors",
+      "chunks": [
+        "New vendor approval. A new software vendor requires a completed vendor intake form, a security review, and legal sign-off on the contract. Budget owner approval is needed before procurement will issue a purchase order. The full process typically takes 4 to 6 weeks.",
+        "Vendor security review. The security review assesses data handling, subprocessors, certifications, and breach history. Vendors processing customer data additionally require a signed data processing agreement.",
+        "Contract renewal. Renewing an existing vendor contract requires budget owner approval only, unless the scope of data processing has changed, in which case a fresh security review is triggered.",
+        "Approved vendors. The current list of approved software vendors is maintained in the procurement catalogue."
+      ]
+    },
+    {
+      "uri": "confluence://legal/data-retention",
+      "chunks": [
+        "Customer data retention after deletion. When a customer deletes their account, personal data is removed from production systems within 30 days and purged from backups within a further 90 days, giving a maximum retention of 120 days post-deletion.",
+        "Account deletion requests. A customer requests deletion in-product under Account Settings, or by contacting support, who verify identity before actioning.",
+        "Log retention. Application logs are retained for 13 months. Logs are scrubbed of personal data at ingestion.",
+        "Data residency. Customer data is stored in the region selected at account creation and is not replicated across regions except for disaster-recovery backups within the same jurisdiction."
+      ]
+    },
+    {
+      "uri": "confluence://eng/code-review",
+      "chunks": [
+        "Code review turnaround. Reviewers are expected to respond to a pull request within one working day. If a review has not been started after 24 hours it is reasonable to chase in the team channel or reassign.",
+        "Approvals required. A pull request needs one approval from a code owner. Changes touching authentication, billing, or data retention need two, one of which must be from the owning team.",
+        "What to look for in review. Prioritise correctness, then tests, then readability. Style is enforced by the formatter and should not be raised in review comments.",
+        "Security review turnaround. A security review is a separate process from code review and takes up to 5 working days."
+      ]
+    },
+    {
+      "uri": "confluence://hr/progression",
+      "chunks": [
+        "Promotion cycle timing. Promotion decisions are made twice yearly, in March and September. Nominations close six weeks before the decision, and outcomes are communicated in the first week of April and October respectively.",
+        "Promotion criteria. Promotions are assessed against sustained performance at the next level, scope of impact, and peer feedback, not tenure.",
+        "Promotion decision makers. Decisions are made by a calibration panel of managers across the function, chaired by the function head.",
+        "Salary reviews. Salary reviews run annually in January and are independent of the promotion cycle."
+      ]
+    }
+  ]
+}

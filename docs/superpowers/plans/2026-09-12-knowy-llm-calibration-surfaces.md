@@ -135,7 +135,8 @@ measurement is worth knowing about now, and that is the entire reason this task 
 Then wire a reduced version into CI as a regression gate so a future change that quietly
 wrecks the hit rate fails the build.
 
-## Task 4 — `@knowy/mcp`
+## Task 4 — `@knowy/mcp`  
+> **Reassigned to the Codex agent** (2026-09-12), along with Task 5. Blocked on calibration round 2: building surfaces on a 27% hit rate is premature. See `calibration/report.md`.
 
 **Files:** `packages/mcp/**`
 

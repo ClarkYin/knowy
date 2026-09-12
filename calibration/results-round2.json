@@ -1,0 +1,119 @@
+{
+  "k": 8,
+  "corpusChunks": 55,
+  "ceAvailable": true,
+  "rows": [
+    {
+      "label": "A  cosine >= 0.80",
+      "hitRate": 0.5555555555555556,
+      "falseHits": 18,
+      "hits": 25,
+      "misroutes": 0,
+      "rawFalse": 18
+    },
+    {
+      "label": "A  cosine >= 0.84",
+      "hitRate": 0.4222222222222222,
+      "falseHits": 7,
+      "hits": 19,
+      "misroutes": 0,
+      "rawFalse": 7
+    },
+    {
+      "label": "A  cosine >= 0.86",
+      "hitRate": 0.26666666666666666,
+      "falseHits": 5,
+      "hits": 12,
+      "misroutes": 0,
+      "rawFalse": 5
+    },
+    {
+      "label": "B  cosine >= 0.78 + overlap >= 0.500",
+      "hitRate": 0.6888888888888889,
+      "falseHits": 25,
+      "hits": 31,
+      "misroutes": 0,
+      "rawFalse": 25
+    },
+    {
+      "label": "B  cosine >= 0.78 + overlap >= 0.625",
+      "hitRate": 0.6666666666666666,
+      "falseHits": 21,
+      "hits": 30,
+      "misroutes": 0,
+      "rawFalse": 21
+    },
+    {
+      "label": "B  cosine >= 0.78 + overlap >= 0.750",
+      "hitRate": 0.4666666666666667,
+      "falseHits": 18,
+      "hits": 21,
+      "misroutes": 0,
+      "rawFalse": 18
+    },
+    {
+      "label": "B  cosine >= 0.78 + overlap >= 0.875",
+      "hitRate": 0.28888888888888886,
+      "falseHits": 8,
+      "hits": 13,
+      "misroutes": 0,
+      "rawFalse": 8
+    },
+    {
+      "label": "B  cosine >= 0.82 + overlap >= 0.500",
+      "hitRate": 0.4666666666666667,
+      "falseHits": 14,
+      "hits": 21,
+      "misroutes": 0,
+      "rawFalse": 14
+    },
+    {
+      "label": "B  cosine >= 0.82 + overlap >= 0.625",
+      "hitRate": 0.4666666666666667,
+      "falseHits": 14,
+      "hits": 21,
+      "misroutes": 0,
+      "rawFalse": 14
+    },
+    {
+      "label": "B  cosine >= 0.82 + overlap >= 0.750",
+      "hitRate": 0.3333333333333333,
+      "falseHits": 14,
+      "hits": 15,
+      "misroutes": 0,
+      "rawFalse": 14
+    },
+    {
+      "label": "B  cosine >= 0.82 + overlap >= 0.875",
+      "hitRate": 0.2222222222222222,
+      "falseHits": 8,
+      "hits": 10,
+      "misroutes": 0,
+      "rawFalse": 8
+    },
+    {
+      "label": "C  cosine >= 0.78 + rerank >= -1.00",
+      "hitRate": 0.6888888888888889,
+      "falseHits": 25,
+      "hits": 31,
+      "misroutes": 0,
+      "rawFalse": 25
+    },
+    {
+      "label": "C  cosine >= 0.78 + rerank >= -1.00",
+      "hitRate": 0.6888888888888889,
+      "falseHits": 25,
+      "hits": 31,
+      "misroutes": 0,
+      "rawFalse": 25
+    },
+    {
+      "label": "C  cosine >= 0.78 + rerank >= -1.00",
+      "hitRate": 0.6888888888888889,
+      "falseHits": 25,
+      "hits": 31,
+      "misroutes": 0,
+      "rawFalse": 25
+    }
+  ]
+}
