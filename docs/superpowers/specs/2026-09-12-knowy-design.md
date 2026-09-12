@@ -236,7 +236,9 @@ and nothing else.
 ```ts
 interface RawEvidenceIndex {
   search(query: SearchQuery, opts: SearchOpts): Promise<Evidence[]>
-  fingerprint(ids: string[]): Promise<Map<string, Fingerprint | null>>  // null = deleted
+  // SearchOpts carries `granted`, so the index returns only evidence the caller may read
+  fetch(ids: string[]): Promise<Evidence[]>   // patch tier needs changed content by id
+  fingerprint(ids: string[]): Promise<Map<string, Fingerprint | null>>
   capabilities(): IndexCapabilities   // { acl: boolean, hashing: "native" | "derived" }
 }
 
@@ -246,7 +248,8 @@ interface ObjectStore {
   put(obj: IntelligenceObject): Promise<void>
   searchSimilar(tenantId: string, vec: number[], opts: SimilarOpts): Promise<ScoredObject[]>
   invalidate(tenantId: string, selector: InvalidateSelector): Promise<number>
-  stats(tenantId: string, window: Window): Promise<StatsSnapshot>
+  markVerified(tenantId: string, id: string, at: string): Promise<void>
+  stats(tenantId: string, window: Window): Promise<StatsSnapshot>   // added with §12.5
 }
 
 interface Synthesizer {
@@ -265,6 +268,11 @@ interface Embedder {
 actually answered the question; `confidence` feeds the coverage gate in §6 step 5.
 
 ### 10.1 The fingerprint requirement
+
+`fingerprint()` distinguishes two outcomes that are easy to conflate: a **`null` value**
+means the index knows the evidence is gone or never existed, while an **absent key**
+means the index could not answer. The first is a deletion, the second is a partial
+failure, and §7.3 counts both toward churn.
 
 `fingerprint()` is the one non-obvious demand Knowy places on a customer's existing
 index: it must report, cheaply and without returning content, whether an evidence ID
@@ -297,8 +305,11 @@ interface IntelligenceObject {
   embedding: number[]             // of canonical_question — discovery
   tags: string[]
   acl: string[]                   // union of evidence ACL tags
+  acl_complete: boolean           // false when the index could not report ACLs (§8)
   evidence: EvidenceRef[]         // [{ id, hash, source_uri, acl, retrieved_at }]
   built_at: string                // ISO 8601
+  last_verified_at: string | null // mutable; TTL is measured from this when set
+  invalidated_at: string | null   // set by invalidate(); forces a rebuild (§7.2)
   ttl_seconds: number
   version: number
   supersedes: string | null
@@ -313,6 +324,18 @@ interface IntelligenceObject {
 Objects are **immutable per version**. A patch or rebuild writes a new version with
 `supersedes` pointing at the previous one, so an answer an agent acted on remains
 auditable. Retention of superseded versions is configurable (default: 30 days).
+
+Three fields are deliberately *mutable* metadata rather than versioned content:
+
+- `last_verified_at` — a verify-tier hit on a TTL-expired object proves the object is
+  still true, so it extends the freshness window without creating a new version.
+  Effective expiry is `(last_verified_at ?? built_at) + ttl_seconds`. Without this,
+  every request after TTL expiry would re-run the fingerprint check.
+- `invalidated_at` — set by `invalidate()`. A caller invalidates because they know
+  something the fingerprints cannot see, so an invalidated object forces a **rebuild**
+  even when every hash still matches.
+- `acl_complete` — recorded at build time from `index.capabilities().acl`. Under
+  `acl_mode: "strict"` an object with `acl_complete: false` is never served from cache.
 
 Persistence in `@knowy/store-postgres`: one `objects` table with a `vector` column for
 `embedding` (pgvector, IVFFlat index), a JSONB column for `evidence`, and a GIN index
