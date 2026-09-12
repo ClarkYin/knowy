@@ -11,3 +11,4 @@ export * from "./gates/result.js";
 export * from "./gates/coverage.js";
 export * from "./gates/permission.js";
 export * from "./accounting/savings.js";
+export * from "./math/cosine.js";

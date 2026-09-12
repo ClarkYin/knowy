@@ -24,6 +24,18 @@ importers:
         specifier: ^2.1.0
         version: 2.1.9(@types/node@22.20.2)
 
+  packages/index-memory:
+    dependencies:
+      '@knowy/core':
+        specifier: workspace:*
+        version: link:../core
+
+  packages/store-memory:
+    dependencies:
+      '@knowy/core':
+        specifier: workspace:*
+        version: link:../core
+
 packages:
 
   '@esbuild/aix-ppc64@0.21.5':
