@@ -110,3 +110,9 @@ the Slack plugin are in progress.
 - [Plan 1 — core engine](docs/superpowers/plans/2026-09-12-knowy-core-engine.md) ✅ complete
 - [Plan 2 — adapters, server, SDK](docs/superpowers/plans/2026-09-12-knowy-adapters-and-server.md) — in progress
 - Plan 3 — MCP, Slack, calibration harness — in progress
+
+## License
+
+All rights reserved. This repository is public so the design and approach can be read and
+discussed; no license to use, copy, modify, or distribute the code is granted at this time.
+If you want to use Knowy, get in touch.

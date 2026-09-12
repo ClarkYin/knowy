@@ -26,6 +26,8 @@ packages/store-memory/  @knowy/store-memory reference ObjectStore
 examples/cold-to-warm.ts                    runnable demo: pnpm example
 ```
 
+All of the above is on `main`. Branch from `main`, not from any feature branch.
+
 Get oriented in this order, it takes about twenty minutes and saves far more:
 
 1. `packages/core/src/types/ports.ts` — the four interfaces you implement against.
@@ -40,11 +42,23 @@ Get oriented in this order, it takes about twenty minutes and saves far more:
 
 ```bash
 git clone git@github.com:ClarkYin/knowy.git && cd knowy
-git checkout -b feat/adapters-and-server origin/feat/core-engine
+git checkout -b feat/adapters-and-server origin/main
 pnpm install
 pnpm test        # must be 102 passing before you change anything
+pnpm typecheck   # must exit 0
 pnpm example     # must print rebuilt / verified / patched / rebuilt
 ```
+
+**Two wiring steps for every package you add**, easy to miss and confusing when missed:
+
+1. **`vitest.config.ts`** — add a `resolve.alias` entry pointing `@knowy/<your-package>`
+   at its `src/index.ts`. Tests resolve workspace packages through these aliases rather
+   than through `dist`, so the suite needs no build step. Without the entry your tests
+   fail with a module-resolution error that looks like a missing dependency.
+2. **`tsconfig.test.json`** — add the same mapping under `compilerOptions.paths`. The
+   `include` globs already cover `packages/*/test`, so your tests are typechecked
+   automatically once the path resolves. `pnpm typecheck` covers tests and examples, not
+   just `src`; a type error in a test file fails the build.
 
 **Use pnpm. Never npm or yarn.** The repo is a pnpm workspace and npm will corrupt it.
 
