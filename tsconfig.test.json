@@ -1,0 +1,16 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "noEmit": true,
+    "declaration": false,
+    "baseUrl": ".",
+    "types": ["node"],
+    "paths": {
+      "@knowy/core": ["./packages/core/src/index.ts"],
+      "@knowy/core/testing": ["./packages/core/src/testing/index.ts"],
+      "@knowy/index-memory": ["./packages/index-memory/src/index.ts"],
+      "@knowy/store-memory": ["./packages/store-memory/src/index.ts"]
+    }
+  },
+  "include": ["packages/*/src", "packages/*/test", "examples"]
+}
