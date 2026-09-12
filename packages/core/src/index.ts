@@ -6,3 +6,8 @@ export * from "./types/ports.js";
 export * from "./object/validate.js";
 export * from "./freshness/ttl.js";
 export * from "./freshness/diff.js";
+export * from "./freshness/planner.js";
+export * from "./gates/result.js";
+export * from "./gates/coverage.js";
+export * from "./gates/permission.js";
+export * from "./accounting/savings.js";
